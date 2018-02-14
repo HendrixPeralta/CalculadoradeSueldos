@@ -1,3 +1,0 @@
-# CalculadoradeSueldos
-
-Altice project
