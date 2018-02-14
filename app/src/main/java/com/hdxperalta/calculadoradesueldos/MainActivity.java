@@ -1,5 +1,6 @@
 package com.hdxperalta.calculadoradesueldos;
 
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,33 +14,61 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-    int salary = 33600;
+    double salary = 61000;
     double tssDeduction = 0;
     double lawDeduction = 0;
     double realSalary = 0;
 
     public void calculate(View view) {
        tssDeduction = tssCalculator(salary);
-   //    lawDeduction = lawCalculator(salary);
+       lawDeduction = lawCalculator(salary);
     //   realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
 
        displayTssDeduction(tssDeduction);
+       displayLawDeduction(lawDeduction);
     }
 
+    /*
+    * IT WORKS
+    *
+    * this method display the LAW deduction on screen
+    * */
+    private void displayLawDeduction(double lawDeductionDisplay) {
+        String tssDeductionDisplayString = Double.valueOf(lawDeductionDisplay).toString();
+        TextView tssDeductionTextView = (TextView)
+                findViewById(R.id.law_text_view);
+        tssDeductionTextView.setText(tssDeductionDisplayString);
+    }
+
+    /*
+   * IT WORKS
+   *
+   * this method display the TSS deduction on screen
+   * */
     private void displayTssDeduction(double tssDeductionDisplay) {
-        String tssDeductionDisplayString = new Double(tssDeductionDisplay).toString();
+        String tssDeductionDisplayString = Double.valueOf(tssDeductionDisplay).toString();
         TextView tssDeductionTextView = (TextView)
                 findViewById(R.id.tss_text_view);
         tssDeductionTextView.setText(tssDeductionDisplayString);
     }
 
+    /*
+   * IT WORKS
+   *
+   * this method CALCULATE the TSS deduction on screen
+   * */
     private double tssCalculator(double monthlyMoney) {
-        return (monthlyMoney * 0.0591);
+        return (monthlyMoney * 0.0592);
     }
-/*
-    private double lawCalculator(int monthlyMoney){
 
-        int moneyPerYear = monthlyMoney * 12;
+    /*
+   * DON'T WORK
+   *
+   * this method CALCULATE the LAW deduction on screen
+   * */
+    private double lawCalculator(double monthlyMoney){
+
+        double moneyPerYear = monthlyMoney * 12;
         double deductionByLaw;
 
         if (moneyPerYear < 416220) {
@@ -47,20 +76,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else if (moneyPerYear >= 416220 && moneyPerYear < 624329) {
-            deductionByLaw = (moneyPerYear - 416220)*0.15;
+            deductionByLaw = ((moneyPerYear - 416220) * 0.15) / 12;
+
         }
 
         else if (moneyPerYear >= 624329 && moneyPerYear < 867123) {
-            deductionByLaw = 31216 + (moneyPerYear - 624329)*0.20;
+            deductionByLaw = (31216 + (moneyPerYear - 624329) * 0.20) / 12;
         }
-        else deductionByLaw = 79776 + (moneyPerYear - 867123)*0.25;
+        else deductionByLaw = (79776 + (moneyPerYear - 867123) * 0.25) / 12;
 
 
 
         return deductionByLaw;
 
     }
-
+/*
     private double realSalaryCalculator(int monthlyMoney, double deductionByTss, double deductionByLaw){
         return  monthlyMoney - deductionByLaw - deductionByTss;
     }
