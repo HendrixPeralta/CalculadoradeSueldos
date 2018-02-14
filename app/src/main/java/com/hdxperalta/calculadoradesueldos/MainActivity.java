@@ -22,10 +22,23 @@ public class MainActivity extends AppCompatActivity {
     public void calculate(View view) {
        tssDeduction = tssCalculator(salary);
        lawDeduction = lawCalculator(salary);
-    //   realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
+       realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
 
        displayTssDeduction(tssDeduction);
        displayLawDeduction(lawDeduction);
+       displayRealSalary(realSalary);
+    }
+
+    /*
+    * IT WORKS
+    *
+    * this method display the REAL SALARY on screen
+    * */
+    private void displayRealSalary(double realSalary) {
+        String tssDeductionDisplayString = Double.valueOf(realSalary).toString();
+        TextView tssDeductionTextView = (TextView)
+                findViewById(R.id.real_salary_text_view);
+        tssDeductionTextView.setText(tssDeductionDisplayString);
     }
 
     /*
@@ -55,16 +68,16 @@ public class MainActivity extends AppCompatActivity {
     /*
    * IT WORKS
    *
-   * this method CALCULATE the TSS deduction on screen
+   * this method CALCULATE the TSS deduction
    * */
     private double tssCalculator(double monthlyMoney) {
         return (monthlyMoney * 0.0592);
     }
 
     /*
-   * DON'T WORK
+   * IT WORKS
    *
-   * this method CALCULATE the LAW deduction on screen
+   * this method CALCULATE the LAW deduction
    * */
     private double lawCalculator(double monthlyMoney){
 
@@ -85,16 +98,18 @@ public class MainActivity extends AppCompatActivity {
         }
         else deductionByLaw = (79776 + (moneyPerYear - 867123) * 0.25) / 12;
 
-
-
         return deductionByLaw;
-
     }
-/*
-    private double realSalaryCalculator(int monthlyMoney, double deductionByTss, double deductionByLaw){
+
+    /*
+   * IT WORKS
+   *
+   * this method CALCULATE the REAL SALARY
+   * */
+    private double realSalaryCalculator(double monthlyMoney, double deductionByTss, double deductionByLaw){
         return  monthlyMoney - deductionByLaw - deductionByTss;
     }
-*/
+
 
 
 
