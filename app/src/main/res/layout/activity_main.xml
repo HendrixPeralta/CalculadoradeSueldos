@@ -24,10 +24,11 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/savings_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="40sp"
-                android:text="00000"/>
+                android:text="@string/initial_state"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -52,10 +53,11 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/debts_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="40sp"
-                android:text="1250"/>
+                android:text="@string/initial_state"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -80,10 +82,11 @@
             android:layout_margin="3dp">
 
             <TextView
+                android:id="@+id/expend_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="40sp"
-                android:text="12500"/>
+                android:text="@string/initial_state"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -109,7 +112,7 @@
                android:layout_width="0dp"
                android:layout_height="wrap_content"
                android:gravity="end"
-               android:text="Deducciones por compania: "/>
+               android:text="Deduc. AFP y ARS: $ "/>
 
            <TextView
                android:id="@+id/tss_text_view"
@@ -129,7 +132,7 @@
                android:layout_width="0dp"
                android:layout_height="wrap_content"
                android:gravity="end"
-               android:text="Deducciones por ley: "/>
+               android:text="Deducciones por ley: $ "/>
 
            <TextView
                android:id="@+id/law_text_view"
@@ -149,14 +152,14 @@
                android:layout_width="0dp"
                android:layout_height="wrap_content"
                android:gravity="end"
-               android:text="Salario Real"/>
+               android:text="Salario Real: $ "/>
 
            <TextView
                android:id="@+id/real_salary_text_view"
                android:layout_weight="1"
                android:layout_width="0dp"
                android:layout_height="wrap_content"
-               android:text="$ 0"/>
+               android:text="@string/initial_state"/>
        </LinearLayout>
    </LinearLayout>
 
