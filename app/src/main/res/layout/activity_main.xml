@@ -112,10 +112,11 @@
                android:text="Deducciones por compania: "/>
 
            <TextView
+               android:id="@+id/tss_text_view"
                android:layout_weight="1"
                android:layout_width="0dp"
                android:layout_height="wrap_content"
-               android:text="$ 7000"/>
+               android:text="$ 0"/>
        </LinearLayout>
 
        <LinearLayout
@@ -156,5 +157,9 @@
                android:text="$ 400000"/>
        </LinearLayout>
    </LinearLayout>
-
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Calcular"
+    android:onClick="calculate"/>
 </LinearLayout>
