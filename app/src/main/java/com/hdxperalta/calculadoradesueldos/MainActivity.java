@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-    double salary = 61000;
+    //int salary = 0;
     double tssDeduction = 0;
     double lawDeduction = 0;
     double realSalary = 0;
@@ -28,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
     double expend = 0;
 
     public void calculate(View view) {
+       EditText inputSalary = (EditText) findViewById(R.id.salary_input);
+       String salaryString = inputSalary.getText().toString();
+       int salary = Integer.parseInt(salaryString);
+
        tssDeduction = tssCalculator(salary);
        lawDeduction = lawCalculator(salary);
        realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
@@ -45,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
        displayMoneyToExpend(expend);
 
     }
+
+    /*
+    * DON'T WORKS
+    *
+    *
+    * */
+
 
     /*
     * IT WORKS
