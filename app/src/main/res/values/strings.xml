@@ -2,4 +2,12 @@
     <string name="app_name">Calculadora de Sueldos</string>
     <string name="initial_state">0</string>
     <string name="escribe_tu_salario">Escribe tu Salario</string>
+    <string name="savings">Ahorros minimos: </string>
+    <string name="Debts">Maximo para deudas: </string>
+    <string name="Expenses">Maximo para Gastos: </string>
+    <string name="tss_deduction">AFP y ARS: </string>
+    <string name="law_deduction">Impuesto sobre la renta: </string>
+    <string name="real_salary">Salario Real </string>
+    <string name="calculate">Calcular</string>
+    <string name="button_text">Calcula tu sueldo</string>
 </resources>
