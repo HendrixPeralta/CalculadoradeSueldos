@@ -1,12 +1,16 @@
 package com.hdxperalta.calculadoradesueldos;
 
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
+
+import java.text.NumberFormat;
 
 /**
  * Created by hdx on 01/03/18.
  */
 
-public class Math {
+public class Math extends AppCompatActivity{
 
     public double tssDeduction = 0;
     public double lawDeduction = 0;
@@ -23,24 +27,27 @@ public class Math {
 //    public float porcentOfDebts;
 //    public float porcentOfExpenses;
 
-    public Math(int salary) {
 
-        tssDeduction = tssDeductionCalculator(salary);
+//    public Math(int salary) {
+//
+//        tssDeduction = tssDeductionCalculator(salary);
+//
+//        lawDeduction = lawDeductionCalculator(salary);
+//
+//        realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
+//
+//        moneyAfterExpenses = reminderMoneyCalculator(realSalary, expenses);
+//
+//        savingsLimit = savingsLimitCalculator(moneyAfterExpenses);
+//
+//        debtsLimit = debtsLimitCalculator(moneyAfterExpenses);
+//
+//        expensesLimit = expensesLimitCalculator(moneyAfterExpenses);
+//
+//        displayRealSalary(realSalary);
+//    }
 
-        lawDeduction = lawDeductionCalculator(salary);
-
-        realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
-
-        moneyAfterExpenses = reminderMoneyCalculator(realSalary, expenses);
-
-        savingsLimit = savingsLimitCalculator(moneyAfterExpenses);
-
-        debtsLimit = debtsLimitCalculator(moneyAfterExpenses);
-
-        expensesLimit = expensesLimitCalculator(moneyAfterExpenses);
-    }
-
-    private double tssDeductionCalculator(double monthlyMoney) {
+    public double tssDeductionCalculator(double monthlyMoney) {
         return (monthlyMoney * 0.0592);
     }
 
@@ -66,7 +73,7 @@ public class Math {
         return deductionByLaw;
     }
 
-    private double realSalaryCalculator(int monthlyMoney, double deductionByTss, double deductionByLaw){
+    public double realSalaryCalculator(int monthlyMoney, double deductionByTss, double deductionByLaw){
         return  monthlyMoney - deductionByLaw - deductionByTss;
     }
 
@@ -86,4 +93,12 @@ public class Math {
         return moneyLeft * 0.6;
     }
 
+    public void displayRealSalary(double realSalary) {
+        String tssDeductionDisplayString = numberToCurrency(realSalary);
+    }
+
+    private String numberToCurrency(double doubleToConvert){
+        return NumberFormat.getCurrencyInstance().format(doubleToConvert);
+
+    }
 }

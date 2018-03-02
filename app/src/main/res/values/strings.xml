@@ -16,7 +16,7 @@
     <string name="add">+</string>
     <string name="calcular_sueldo_real">Calcular sueldo real</string>
     <string name="nombre">Nombre</string>
-    <string name="limpiar">Limpiar</string>
+    <string name="limpiar">Borrar</string>
     <string name="initial_state">$ 0</string>
     <string name="deduction_title">Deducciones</string>
     <string name="flujo_de_dinero">Flujo de dinero</string>
