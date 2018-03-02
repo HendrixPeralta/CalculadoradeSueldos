@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Calculadora de Sueldos</string>
-    <string name="initial_state">0</string>
     <string name="escribe_tu_salario">Escribe tu Salario</string>
     <string name="savings">Ahorros minimos: </string>
     <string name="Debts">Maximo para deudas: </string>
@@ -10,4 +9,16 @@
     <string name="real_salary">Salario Real </string>
     <string name="calculate">Calcular</string>
     <string name="button_text">Calcula tu sueldo</string>
+    <string name="introduce_tu_sueldo">Introduce tu sueldo</string>
+    <string name="sueldo_actual">Sueldo Actual</string>
+    <string name="gastos_fijos">Gastos fijos</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="add">+</string>
+    <string name="calcular_sueldo_real">Calcular sueldo real</string>
+    <string name="nombre">Nombre</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="initial_state">$ 0</string>
+    <string name="deduction_title">Deducciones</string>
+    <string name="flujo_de_dinero">Flujo de dinero</string>
+    <string name="introduce_tus_datos">Introduce tus datos</string>
 </resources>

@@ -11,11 +11,14 @@ public class Math {
     public double tssDeduction = 0;
     public double lawDeduction = 0;
     public double realSalary = 0;
-//
-//    public double save = 0;
-//    public double debt = 0;
-//    public double expend = 0;
-//
+
+    public double expenses =13000;
+    public double moneyAfterExpenses = 0;
+
+    public double savingsLimit = 0;
+    public double debtsLimit = 0;
+    public double expensesLimit = 0;
+
 //    public float porcentOfSavings;
 //    public float porcentOfDebts;
 //    public float porcentOfExpenses;
@@ -23,12 +26,18 @@ public class Math {
     public Math(int salary) {
 
         tssDeduction = tssDeductionCalculator(salary);
-        Log.v("Math", "tss Deduction = "
-                + tssDeduction);
+
         lawDeduction = lawDeductionCalculator(salary);
-        Log.v("Math", "Law Deduction = "
-                + lawDeduction);
+
         realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
+
+        moneyAfterExpenses = reminderMoneyCalculator(realSalary, expenses);
+
+        savingsLimit = savingsLimitCalculator(moneyAfterExpenses);
+
+        debtsLimit = debtsLimitCalculator(moneyAfterExpenses);
+
+        expensesLimit = expensesLimitCalculator(moneyAfterExpenses);
     }
 
     private double tssDeductionCalculator(double monthlyMoney) {
@@ -60,4 +69,21 @@ public class Math {
     private double realSalaryCalculator(int monthlyMoney, double deductionByTss, double deductionByLaw){
         return  monthlyMoney - deductionByLaw - deductionByTss;
     }
+
+    private double reminderMoneyCalculator(double realSalary, double expenses) {
+        return realSalary - expenses;
+    }
+
+    private double savingsLimitCalculator(double moneyLeft) {
+        return moneyLeft * 0.1;
+    }
+
+    private double debtsLimitCalculator(double moneyLeft) {
+        return moneyLeft * 0.3;
+    }
+
+    private double expensesLimitCalculator(double moneyLeft) {
+        return moneyLeft * 0.6;
+    }
+
 }

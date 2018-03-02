@@ -7,10 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
-import java.text.NumberFormat;
 
 public class MainActivity
         extends AppCompatActivity
@@ -25,10 +21,7 @@ public class MainActivity
                 findViewById(R.id.input_view_button);
 
         myCalculateButton.setOnClickListener(this);
-
-
     }
-
 
     @Override
     public void onClick(View view) {
@@ -36,7 +29,8 @@ public class MainActivity
             case R.id.input_view_button:
                 Log.d("MainActivity", "button clicked");
                 Intent goToInputView =
-                        new Intent(this, DataColectorActivity.class);
+                        new Intent(this,
+                                DataColectorActivity.class);
                 startActivity(goToInputView);
                 break;
         }

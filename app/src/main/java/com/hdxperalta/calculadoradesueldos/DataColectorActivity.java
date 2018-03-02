@@ -21,11 +21,11 @@ public class DataColectorActivity extends AppCompatActivity implements View.OnCl
 
     }
 
-
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.calculate_button:
+
 
                 EditText inputSalary = (EditText)
                         findViewById(R.id.salary_edit_text);
@@ -33,6 +33,7 @@ public class DataColectorActivity extends AppCompatActivity implements View.OnCl
                 int salary = Integer.parseInt(salaryString);
 
                 Math UserDataCalculation = new Math(salary);
+//                Displayer DisplayUserInformation = new Displayer();
         }
     }
 }
