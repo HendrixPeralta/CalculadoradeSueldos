@@ -28,24 +28,24 @@ public class Math extends AppCompatActivity{
 //    public float porcentOfExpenses;
 
 
-//    public Math(int salary) {
-//
-//        tssDeduction = tssDeductionCalculator(salary);
-//
-//        lawDeduction = lawDeductionCalculator(salary);
-//
-//        realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
-//
-//        moneyAfterExpenses = reminderMoneyCalculator(realSalary, expenses);
-//
-//        savingsLimit = savingsLimitCalculator(moneyAfterExpenses);
-//
-//        debtsLimit = debtsLimitCalculator(moneyAfterExpenses);
-//
-//        expensesLimit = expensesLimitCalculator(moneyAfterExpenses);
-//
-//        displayRealSalary(realSalary);
-//    }
+    public Math(int salary) {
+
+        tssDeduction = tssDeductionCalculator(salary);
+
+        lawDeduction = lawDeductionCalculator(salary);
+
+        realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
+
+        moneyAfterExpenses = reminderMoneyCalculator(realSalary, expenses);
+
+        savingsLimit = savingsLimitCalculator(moneyAfterExpenses);
+
+        debtsLimit = debtsLimitCalculator(moneyAfterExpenses);
+
+        expensesLimit = expensesLimitCalculator(moneyAfterExpenses);
+
+        displayRealSalary(realSalary);
+    }
 
     public double tssDeductionCalculator(double monthlyMoney) {
         return (monthlyMoney * 0.0592);

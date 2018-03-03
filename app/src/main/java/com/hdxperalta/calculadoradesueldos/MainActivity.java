@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    int salary;
+    static int SALARY = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.calculate_button:
                 EditText salaryEditText = (EditText) findViewById(R.id.salary_edit_text);
                 String salaryString = salaryEditText.getText().toString();
-                salary = Integer.parseInt(salaryString);
+                SALARY = Integer.parseInt(salaryString);
 
 
                 Intent goToDataViewer =
@@ -45,5 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.clear_data_button:
                 Toast.makeText(this, "Presionaste Borrar", Toast.LENGTH_SHORT);
         }
+    }
+
+    public static int getSalary(){
+     return SALARY;
     }
 }
