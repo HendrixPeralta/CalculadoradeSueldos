@@ -12,11 +12,12 @@
     <string name="introduce_tu_sueldo">Introduce tu sueldo</string>
     <string name="sueldo_actual">Sueldo Actual</string>
     <string name="gastos_fijos">Gastos fijos</string>
-    <string name="cantidad">Cantidad</string>
-    <string name="add">+</string>
-    <string name="calcular_sueldo_real">Calcular sueldo real</string>
+    <string name="cantidad">Introduce un monto</string>
+    <string name="add_Expenses">Añadir</string>
+    <string name="calcular_sueldo_real">Calcular</string>
     <string name="nombre">Nombre</string>
     <string name="limpiar">Borrar</string>
+    <string name="expenses_list">Ver gastos</string>
     <string name="initial_state">$ 0</string>
     <string name="deduction_title">Deducciones</string>
     <string name="flujo_de_dinero">Flujo de dinero</string>
