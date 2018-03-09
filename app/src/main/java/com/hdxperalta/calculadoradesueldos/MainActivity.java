@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent goToDataViewer =
                     new Intent(this,DataViewerActivity.class);
             goToDataViewer.putExtra("FIXED_EXPENSES", FIXED_EXPENSES);
+            goToDataViewer.putExtra("VARIABLE_EXPENSES", VARIABLE_EXPENSES);
             goToDataViewer.putExtra("SALARY", SALARY);
             startActivity(goToDataViewer);
         });
@@ -138,30 +139,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch(requestCode) {
             case 1:
                 Log.v("Main", "fixed expenses" + FIXED_EXPENSES);
-                if(resultCode == RESULT_OK)
-//                    if( resultCode == RESULT_OK && data != null) {
-                        fixedExpensesList = data.getStringArrayListExtra("listItem");
+                if(resultCode == RESULT_OK) {
+                    fixedExpensesList = data.getStringArrayListExtra("listItem");
 
-                FIXED_EXPENSES = 0;
-                for(int i = 0; i < fixedExpensesList.size(); i++){
-                    FIXED_EXPENSES += Integer.parseInt(fixedExpensesList.get(i));
+                    FIXED_EXPENSES = 0;
+                    for (int i = 0; i < fixedExpensesList.size(); i++) {
+                        FIXED_EXPENSES += Integer.parseInt(fixedExpensesList.get(i));
+                    }
+                    Log.v("Main", "fixed expenses" + FIXED_EXPENSES);
                 }
-                Log.v("Main", "fixed expenses" + FIXED_EXPENSES);
-//                    }
                 break;
 
             case 2:
                 Log.v("Main", "fixed expenses" + VARIABLE_EXPENSES);
-                if(resultCode == RESULT_OK)
-//                    if(requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null) {
-                        variableExpensesLIst = data.getStringArrayListExtra("listItem");
+                if(resultCode == RESULT_OK) {
+                    variableExpensesLIst = data.getStringArrayListExtra("listItem");
 
-                VARIABLE_EXPENSES = 0;
-                for(int i = 0; i < variableExpensesLIst.size(); i++){
-                    VARIABLE_EXPENSES += Integer.parseInt(variableExpensesLIst.get(i));
+                    VARIABLE_EXPENSES = 0;
+                    for (int i = 0; i < variableExpensesLIst.size(); i++) {
+                        VARIABLE_EXPENSES += Integer.parseInt(variableExpensesLIst.get(i));
+                    }
+                    Log.v("Main", "fixed expenses" + VARIABLE_EXPENSES);
                 }
-                Log.v("Main", "fixed expenses" + VARIABLE_EXPENSES);
-//                    }
                 break;
 
             default:

@@ -15,21 +15,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="@string/savings"
+        app:layout_constraintBottom_toBottomOf="@+id/savings_limit_text_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        android:layout_marginLeft="16dp" />
 
     <TextView
-        style="@style/subText"
         android:id="@+id/textView3"
+        style="@style/subText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="@string/Debts"
+        app:layout_constraintBottom_toBottomOf="@+id/debts_limit_text_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/money_flow_title"
         android:layout_marginLeft="16dp" />
 
     <TextView
@@ -38,22 +37,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/law_deduction_text_view"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        tools:text="@string/initial_state" />
+        app:layout_constraintTop_toBottomOf="@+id/money_flow_title"
+        tools:text="@string/initial_state"
+        android:layout_marginRight="16dp" />
 
     <TextView
-        style="@style/subText"
         android:id="@+id/textView5"
+        style="@style/subText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="@string/Expenses"
+        app:layout_constraintBottom_toBottomOf="@+id/expenses_limit_text_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
         android:layout_marginLeft="16dp" />
 
     <TextView
@@ -62,11 +62,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/debts_limit_text_view"
-        app:layout_constraintTop_toTopOf="@+id/textView5"
-        tools:text="@string/initial_state" />
+        app:layout_constraintTop_toBottomOf="@+id/debts_limit_text_view"
+        tools:text="@string/initial_state"
+        android:layout_marginRight="16dp" />
 
     <TextView
         android:id="@+id/textView7"
@@ -75,12 +77,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="@string/tss_deduction"
+        app:layout_constraintBottom_toBottomOf="@+id/tss_text_view"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp" />
 
     <TextView
         android:id="@+id/textView8"
@@ -88,11 +91,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="@string/law_deduction"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/law_deduction_text_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deduction_title"
         android:layout_marginLeft="16dp" />
 
     <TextView
@@ -102,33 +104,39 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/textView8"
-        tools:text="@string/initial_state" />
+        app:layout_constraintTop_toBottomOf="@+id/deduction_title"
+        tools:text="@string/initial_state"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp" />
 
     <TextView
         android:id="@+id/money_flow_title"
         style="@style/SectionTitle"
         android:layout_width="match_parent"
-        android:layout_height="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#d4d4d4"
         android:text="@string/flujo_de_dinero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/money_flow_title2"
         style="@style/SectionTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
+        android:background="#d4d4d4"
         android:text="Alertas"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/savings_limit_text_view"
@@ -136,11 +144,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/expenses_limit_text_view"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        tools:text="@string/initial_state" />
+        app:layout_constraintTop_toBottomOf="@+id/expenses_limit_text_view"
+        tools:text="@string/initial_state"
+        android:layout_marginRight="16dp" />
 
     <TextView
         android:id="@+id/AlertTextView"
@@ -149,12 +159,13 @@
         android:layout_height="19dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="Gastos Fijos:"
+        app:layout_constraintBottom_toBottomOf="@+id/normal_expenses_text_view"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/money_flow_title2" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp" />
 
     <TextView
         android:id="@+id/normal_expenses_text_view"
@@ -162,10 +173,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/law_deduction_text_view"
-        app:layout_constraintTop_toTopOf="@+id/AlertTextView"
+        app:layout_constraintTop_toBottomOf="@+id/money_flow_title2"
         tools:text="@string/initial_state"
         android:layout_marginRight="16dp" />
 
@@ -175,23 +187,26 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/law_deduction_text_view"
-        app:layout_constraintTop_toTopOf="@+id/textView7"
-        tools:text="@string/initial_state" />
+        app:layout_constraintTop_toBottomOf="@+id/law_deduction_text_view"
+        tools:text="@string/initial_state"
+        android:layout_marginRight="16dp" />
 
     <TextView
         android:id="@+id/deduction_title"
         style="@style/SectionTitle"
         android:layout_width="0dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#d4d4d4"
         android:text="@string/deduction_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView9"
@@ -214,7 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="1"
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -223,55 +238,15 @@
         tools:text="@string/initial_state" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="0dp"
-        android:layout_height="1.5dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/darker_gray"
-        android:backgroundTint="@android:color/darker_gray"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/darker_gray"
-        android:backgroundTint="@android:color/darker_gray"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="360dp"
-        android:layout_height="1.5dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/darker_gray"
-        android:backgroundTint="@android:color/darker_gray"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-    <TextView
         android:id="@+id/textView11"
         style="@style/subText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="Restante Para Gastos"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/expendMoneyLeftTexView"
         app:layout_constraintEnd_toEndOf="@+id/AlertTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AlertTextView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/expendMoneyLeftTexView"
@@ -279,9 +254,36 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/normal_expenses_text_view"
-        app:layout_constraintTop_toTopOf="@+id/textView11"
-        tools:text="@string/initial_state" />
+        app:layout_constraintTop_toBottomOf="@+id/normal_expenses_text_view"
+        tools:text="@string/initial_state"
+        android:layout_marginRight="16dp" />
+
+    <TextView
+        style="@style/subText"
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        style="@style/ShowMoney"
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/initial_state"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/expendMoneyLeftTexView"
+        app:layout_constraintTop_toBottomOf="@+id/expendMoneyLeftTexView"
+        android:layout_marginRight="16dp" />
 
 </android.support.constraint.ConstraintLayout>

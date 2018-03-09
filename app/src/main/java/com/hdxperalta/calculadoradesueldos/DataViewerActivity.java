@@ -20,12 +20,15 @@ public class DataViewerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_data_viewer);
 
         int salary = getIntent().getIntExtra("SALARY", 0);
-        int expenses = getIntent().getIntExtra("EXPENSES", 0);
+        int fixedExpenses = getIntent().getIntExtra("EXPENSES", 0);
+        int variableExpenses = getIntent().getIntExtra("VARIABLE_EXPENSES", 0);
 
 
-        Math UserData = new Math(salary, expenses);
 
-        double expendMoneyLeft = UserData.expensesLimit - expenses;
+        Math UserData = new Math(salary, fixedExpenses, variableExpenses);
+
+        //aqui puse fixed
+        double expendMoneyLeft = UserData.expensesLimit - fixedExpenses;
 
         if (expendMoneyLeft < UserData.expensesLimit){
             showExpendAlert(expendMoneyLeft);
@@ -37,7 +40,8 @@ public class DataViewerActivity extends AppCompatActivity {
         displaySavingsLimit(UserData.savingsLimit);
         displayDebtsLimit(UserData.debtsLimit);
         displayExpensesLimit(UserData.expensesLimit);
-        displayNormalExpenses(expenses);
+        //aqui puse fixed
+        displayNormalExpenses(fixedExpenses);
         displayExpendMoneyLeft(expendMoneyLeft);
     }
 

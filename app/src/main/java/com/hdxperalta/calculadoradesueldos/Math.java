@@ -17,23 +17,18 @@ public class Math extends AppCompatActivity{
     public double savingsLimit = 0;
     public double debtsLimit = 0;
     public double expensesLimit = 0;
+//    public double variableExpensesLimit = 0;
 
-//    public float porcentOfSavings;
-//    public float porcentOfDebts;
-//    public float porcentOfExpenses;
-
-    public Math(int salary, int expenses) {
+    public Math(int salary, int fixedExpenses, int variableExpenses) {
 
         tssDeduction = tssDeductionCalculator(salary);
         lawDeduction = lawDeductionCalculator(salary);
         realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
 
-        moneyAfterExpenses = reminderMoneyCalculator(realSalary, expenses);
-
-        savingsLimit = savingsLimitCalculator(moneyAfterExpenses);
+        savingsLimit = savingsLimitCalculator(realSalary);
         debtsLimit = debtsLimitCalculator(moneyAfterExpenses);
-        expensesLimit = expensesLimitCalculator(moneyAfterExpenses);
-
+        expensesLimit = expensesLimitCalculator(realSalary);
+//        variableExpensesLimit = variableExpensesLimitCalculator(expensesLimit, fixedExpenses);
     }
 
     public double tssDeductionCalculator(double monthlyMoney) {
@@ -62,17 +57,20 @@ public class Math extends AppCompatActivity{
     public double realSalaryCalculator(int monthlyMoney, double deductionByTss, double deductionByLaw){
         return  monthlyMoney - deductionByLaw - deductionByTss;
     }
-    private double reminderMoneyCalculator(double realSalary, double expenses) {
-        return realSalary - expenses;
-    }
-    private double savingsLimitCalculator(double moneyLeft) {
-        return moneyLeft * 0.1;
-    }
-    private double debtsLimitCalculator(double moneyLeft) {
-        return moneyLeft * 0.3;
-    }
-    private double expensesLimitCalculator(double moneyLeft) {
-        return moneyLeft * 0.6;
-    }
 
+    private double savingsLimitCalculator(double realSalary) {
+        return realSalary * 0.1;
+    }
+    private double debtsLimitCalculator(double realSalary) {
+        return realSalary * 0.3;
+    }
+    private double expensesLimitCalculator(double realSalary) {
+        return realSalary * 0.6;
+    }
+//    private double variableExpensesLimitCalculator(double fixedExpensesLimit, int fixedExpenses) {
+//        if (fixedExpensesLimit - fixedExpenses > 0){
+//
+//            return (realSalary * 0.6) - fixedExpenses;
+//        }else return 0;
+//    }
 }
