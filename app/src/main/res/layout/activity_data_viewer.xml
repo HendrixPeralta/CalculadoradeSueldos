@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,289 +8,304 @@
     tools:context="com.hdxperalta.calculadoradesueldos.MainActivity">
 
 
-    <TextView
-        android:id="@+id/textView"
-        style="@style/subText"
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/savings"
-        app:layout_constraintBottom_toBottomOf="@+id/savings_limit_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        style="@style/subText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/Debts"
-        app:layout_constraintBottom_toBottomOf="@+id/debts_limit_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp" />
-
-    <TextView
-        android:id="@+id/debts_limit_text_view"
-        style="@style/ShowMoney"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <TextView
+            android:id="@+id/textView11"
+            style="@style/subText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/ver_gastos_variables"
+            app:layout_constraintBottom_toBottomOf="@+id/variableExpensesTextView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/variableExpensesTextView"
+            style="@style/ShowMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/money_flow_title2"
+            tools:text="@string/initial_state" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/subText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/disponible"
+            app:layout_constraintBottom_toBottomOf="@+id/availableTextView"
+            app:layout_constraintEnd_toEndOf="@+id/textView11"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/money_flow_title2"
+            style="@style/SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="16dp"
+            android:background="#d4d4d4"
+            android:text="@string/desglose_de_gastos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/AlertTextView"
+            style="@style/subText"
+            android:layout_width="0dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/gastos_fijos"
+            app:layout_constraintBottom_toBottomOf="@+id/fixedExpensesTextView"
+            app:layout_constraintEnd_toEndOf="@+id/textView8"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/availableTextView"
+            style="@style/ShowMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/initial_state"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fixedExpensesTextView" />
+
+        <TextView
+            android:id="@+id/fixedExpensesTextView"
+            style="@style/ShowMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/variableExpensesTextView"
+            tools:text="@string/initial_state" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/law_deduction_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/expenses_limit_text_view"
-        tools:text="@string/initial_state"
-        android:layout_marginRight="16dp" />
-
-    <TextView
-        android:id="@+id/textView5"
-        style="@style/subText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/Expenses"
-        app:layout_constraintBottom_toBottomOf="@+id/expenses_limit_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
 
-    <TextView
-        android:id="@+id/expenses_limit_text_view"
-        style="@style/ShowMoney"
+        <TextView
+            android:id="@+id/money_flow_title"
+            style="@style/SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#d4d4d4"
+            android:text="@string/flujo_de_dinero"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/debts_limit_text_view"
+            style="@style/ShowMoney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expenses_limit_text_view"
+            tools:text="@string/initial_state" />
+
+        <TextView
+            android:id="@+id/expenses_limit_text_view"
+            style="@style/ShowMoney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/savings_limit_text_view"
+            tools:text="@string/initial_state" />
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/Expenses"
+            app:layout_constraintBottom_toBottomOf="@+id/expenses_limit_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/savings_limit_text_view"
+            style="@style/ShowMoney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/money_flow_title"
+            tools:text="@string/initial_state" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/Debts"
+            app:layout_constraintBottom_toBottomOf="@+id/debts_limit_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/savings"
+            app:layout_constraintBottom_toBottomOf="@+id/savings_limit_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/debts_limit_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/savings_limit_text_view"
-        tools:text="@string/initial_state"
-        android:layout_marginRight="16dp" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
 
-    <TextView
-        android:id="@+id/textView7"
-        style="@style/subText"
+        <TextView
+            android:id="@+id/textView7"
+            style="@style/subText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/tss_deduction"
+            app:layout_constraintBottom_toBottomOf="@+id/tss_text_view"
+            app:layout_constraintEnd_toEndOf="@+id/textView8"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView8"
+            style="@style/subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/law_deduction"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/law_deduction_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/law_deduction_text_view"
+            style="@style/ShowMoney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tss_text_view"
+            tools:text="@string/initial_state" />
+
+        <TextView
+            android:id="@+id/tss_text_view"
+            style="@style/ShowMoney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deduction_title"
+            tools:text="@string/initial_state" />
+
+        <TextView
+            android:id="@+id/deduction_title"
+            style="@style/SectionTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#d4d4d4"
+            android:text="@string/deduction_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/tss_deduction"
-        app:layout_constraintBottom_toBottomOf="@+id/tss_text_view"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp" />
-
-    <TextView
-        android:id="@+id/textView8"
-        style="@style/subText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/law_deduction"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/law_deduction_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp" />
-
-    <TextView
-        android:id="@+id/law_deduction_text_view"
-        style="@style/ShowMoney"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/tss_text_view"
-        tools:text="@string/initial_state"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="8dp" />
-
-    <TextView
-        android:id="@+id/money_flow_title"
-        style="@style/SectionTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="#d4d4d4"
-        android:text="@string/flujo_de_dinero"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/money_flow_title2"
-        style="@style/SectionTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="#d4d4d4"
-        android:text="@string/desglose_de_gastos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/savings_limit_text_view"
-        style="@style/ShowMoney"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/expenses_limit_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/money_flow_title"
-        tools:text="@string/initial_state"
-        android:layout_marginRight="16dp" />
+        <TextView
+            android:id="@+id/real_salary_text_view"
+            style="@style/SalaryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/initial_state" />
 
-    <TextView
-        android:id="@+id/AlertTextView"
-        style="@style/subText"
-        android:layout_width="0dp"
-        android:layout_height="19dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/gastos_fijos"
-        app:layout_constraintBottom_toBottomOf="@+id/fixedExpensesTextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp" />
-
-    <TextView
-        android:id="@+id/fixedExpensesTextView"
-        style="@style/ShowMoney"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/law_deduction_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/variableExpensesTextView"
-        tools:text="@string/initial_state"
-        android:layout_marginRight="16dp" />
-
-    <TextView
-        android:id="@+id/tss_text_view"
-        style="@style/ShowMoney"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/law_deduction_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/deduction_title"
-        tools:text="@string/initial_state"
-        android:layout_marginRight="16dp" />
-
-    <TextView
-        android:id="@+id/deduction_title"
-        style="@style/SectionTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#d4d4d4"
-        android:text="@string/deduction_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_weight="1"
-        android:text="@string/real_salary"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/real_salary_text_view" />
-
-    <TextView
-        android:id="@+id/real_salary_text_view"
-        style="@style/SalaryTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/initial_state" />
-
-    <TextView
-        android:id="@+id/textView11"
-        style="@style/subText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/gastos_variables"
-        app:layout_constraintBottom_toBottomOf="@+id/variableExpensesTextView"
-        app:layout_constraintEnd_toEndOf="@+id/AlertTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp" />
-
-    <TextView
-        android:id="@+id/variableExpensesTextView"
-        style="@style/ShowMoney"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/fixedExpensesTextView"
-        app:layout_constraintTop_toBottomOf="@+id/money_flow_title2"
-        tools:text="@string/initial_state"
-        android:layout_marginRight="16dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/subText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/disponible"
-        app:layout_constraintBottom_toBottomOf="@+id/availableTextView"
-        app:layout_constraintEnd_toEndOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp" />
-
-    <TextView
-        android:id="@+id/availableTextView"
-        style="@style/ShowMoney"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/initial_state"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/variableExpensesTextView"
-        app:layout_constraintTop_toBottomOf="@+id/fixedExpensesTextView"
-        android:layout_marginRight="16dp" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="@string/real_salary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/real_salary_text_view" />
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
