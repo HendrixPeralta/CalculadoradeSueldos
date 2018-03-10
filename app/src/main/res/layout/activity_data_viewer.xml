@@ -31,9 +31,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@string/ver_gastos_variables"
+            android:text="@string/gastos_variables_desglose"
             app:layout_constraintBottom_toBottomOf="@+id/variableExpensesTextView"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/variableExpensesTextView"
@@ -44,7 +45,8 @@
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/money_flow_title2"
-            tools:text="@string/initial_state" />
+            tools:text="@string/initial_state"
+            android:layout_marginRight="16dp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -55,7 +57,8 @@
             android:text="@string/disponible"
             app:layout_constraintBottom_toBottomOf="@+id/availableTextView"
             app:layout_constraintEnd_toEndOf="@+id/textView11"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/money_flow_title2"
@@ -80,7 +83,9 @@
             app:layout_constraintBottom_toBottomOf="@+id/fixedExpensesTextView"
             app:layout_constraintEnd_toEndOf="@+id/textView8"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/availableTextView"

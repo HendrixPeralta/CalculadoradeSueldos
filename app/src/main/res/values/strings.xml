@@ -29,4 +29,5 @@
     <string name="ver_gastos_fijos">Ver gastos fijos</string>
     <string name="introduce_un_monto">Introduce Un monto</string>
     <string name="ver_gastos_variables">ver gastos variables</string>
+    <string name="gastos_variables_desglose">Gastos Variables</string>
 </resources>
