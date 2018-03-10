@@ -25,7 +25,8 @@
             android:text="@string/limpiar"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/salary_edit_text" />
+            app:layout_constraintTop_toBottomOf="@+id/salary_edit_text"
+            android:layout_marginLeft="16dp" />
 
         <Button
             android:id="@+id/calculate_button"
@@ -45,7 +46,7 @@
             style="@style/SectionTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:background="#d4d4d4"
             android:text="@string/sueldo_actual"
             android:textSize="18sp"
@@ -91,7 +92,8 @@
             android:text="@string/add_Expenses"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/variableExpensesEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/variableExpensesEditText"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -129,7 +131,9 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/addVariableExpensesButton"
-            app:layout_constraintTop_toTopOf="@+id/addVariableExpensesButton" />
+            app:layout_constraintTop_toTopOf="@+id/addVariableExpensesButton"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="8dp" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -150,7 +154,8 @@
             android:text="@string/add_Expenses"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/FixedExpensesEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/FixedExpensesEditText"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/textView14"
@@ -178,7 +183,9 @@
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="16dp" />
 
         <Button
             android:id="@+id/fixedExpensesButton"
@@ -190,7 +197,9 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/addFixedExpensesButton"
-            app:layout_constraintTop_toTopOf="@+id/addFixedExpensesButton" />
+            app:layout_constraintTop_toTopOf="@+id/addFixedExpensesButton"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="8dp" />
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
