@@ -34,7 +34,6 @@ public class FixedExpensesListActivity extends AppCompatActivity {
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener((AdapterView<?> parent, View view, int position, long id) -> {
-            // TODO Auto-generated method stub
 
             AlertDialog alertDialog = new AlertDialog.Builder(FixedExpensesListActivity.this)
                     .setTitle("ATENCION")
@@ -48,10 +47,7 @@ public class FixedExpensesListActivity extends AppCompatActivity {
 
                         Toast.makeText(FixedExpensesListActivity.this, "Item Deleted", Toast.LENGTH_LONG).show();
                     })
-                    .setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                        }
+                    .setNegativeButton("CANCELAR", (dialogInterface, i) -> {
                     })
                     .create();
             alertDialog.show();
