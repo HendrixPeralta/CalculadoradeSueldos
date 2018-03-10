@@ -62,17 +62,4 @@ public class DataViewerActivity extends AppCompatActivity {
 
     }
 
-
-//    private void displayExpendMoneyLeft(double expendMoneyLeft) {
-//        String expendMoneyLeftString = numberToCurrency(expendMoneyLeft);
-//        TextView expendMoneyLeftTextView = (TextView)
-//                findViewById(R.id.variableExpensesTextView);
-//        if (expendMoneyLeft < 0){
-//            expendMoneyLeftTextView.setTextColor(Color.parseColor("#c62535"));
-//
-//        }
-//        expendMoneyLeftTextView.setText(expendMoneyLeftString);
-//
-//    }
-
 }
