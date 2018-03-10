@@ -20,6 +20,13 @@
     <string name="expenses_list">Ver gastos</string>
     <string name="initial_state">$ 0</string>
     <string name="deduction_title">Deducciones</string>
-    <string name="flujo_de_dinero">Flujo de dinero</string>
+    <string name="flujo_de_dinero">Flujo ideal de dinero</string>
     <string name="introduce_tus_datos">Introduce tus datos</string>
+    <string name="alertas">Alertas</string>
+    <string name="gastos_variables">Gastos Variables</string>
+    <string name="disponible">Disponible</string>
+    <string name="desglose_de_gastos">Desglose de Gastos</string>
+    <string name="ver_gastos_fijos">Ver gastos fijos</string>
+    <string name="introduce_un_monto">Introduce Un monto</string>
+    <string name="ver_gastos_variables">ver gastos variables</string>
 </resources>

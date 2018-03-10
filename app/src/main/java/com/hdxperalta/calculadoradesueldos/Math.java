@@ -8,32 +8,39 @@ import java.text.NumberFormat;
 
 public class Math extends AppCompatActivity{
 
+    private final static float SAVING_PERCENT = 0.1F;
+    private final static float EXPENSES_PERCENT = 0.6F;
+    private final static float DEBTS_PERCENT = 0.3F;
+    private final static float TSS_PERCENT = 0.0592f;
+
     public double tssDeduction = 0;
     public double lawDeduction = 0;
     public double realSalary = 0;
 
-    public double moneyAfterExpenses = 0;
-
     public double savingsLimit = 0;
     public double debtsLimit = 0;
     public double expensesLimit = 0;
-//    public double variableExpensesLimit = 0;
+    public double availableMoney = 0;
 
     public Math(int salary, int fixedExpenses, int variableExpenses) {
 
-        tssDeduction = tssDeductionCalculator(salary);
+        tssDeduction = percentCalculator(salary, TSS_PERCENT);
         lawDeduction = lawDeductionCalculator(salary);
         realSalary = realSalaryCalculator(salary, tssDeduction, lawDeduction);
 
-        savingsLimit = savingsLimitCalculator(realSalary);
-        debtsLimit = debtsLimitCalculator(moneyAfterExpenses);
-        expensesLimit = expensesLimitCalculator(realSalary);
-//        variableExpensesLimit = variableExpensesLimitCalculator(expensesLimit, fixedExpenses);
+        savingsLimit = percentCalculator(realSalary, SAVING_PERCENT);
+        debtsLimit = percentCalculator(realSalary, DEBTS_PERCENT);
+        expensesLimit = percentCalculator(realSalary, EXPENSES_PERCENT);
+
+        availableMoney = availableMoneyCalculator(expensesLimit, fixedExpenses, variableExpenses);
     }
 
-    public double tssDeductionCalculator(double monthlyMoney) {
-        float mTssDedutionPorcent = 0.0592f;
-        return (monthlyMoney * mTssDedutionPorcent);
+    private double availableMoneyCalculator(double expensesLimit, int fixedExpenses, int variableExpenses) {
+        double result = expensesLimit - fixedExpenses - variableExpenses;
+        return (result > 0)?  result :  0;
+//        if ( result > 0){
+//            return result;
+//        }else return 0;
     }
     private double lawDeductionCalculator(double monthlyMoney){
 
@@ -57,20 +64,9 @@ public class Math extends AppCompatActivity{
     public double realSalaryCalculator(int monthlyMoney, double deductionByTss, double deductionByLaw){
         return  monthlyMoney - deductionByLaw - deductionByTss;
     }
+    private double percentCalculator(double realSalary, float percent){
+        return realSalary * percent;
+    }
 
-    private double savingsLimitCalculator(double realSalary) {
-        return realSalary * 0.1;
-    }
-    private double debtsLimitCalculator(double realSalary) {
-        return realSalary * 0.3;
-    }
-    private double expensesLimitCalculator(double realSalary) {
-        return realSalary * 0.6;
-    }
-//    private double variableExpensesLimitCalculator(double fixedExpensesLimit, int fixedExpenses) {
-//        if (fixedExpensesLimit - fixedExpenses > 0){
-//
-//            return (realSalary * 0.6) - fixedExpenses;
-//        }else return 0;
-//    }
+
 }

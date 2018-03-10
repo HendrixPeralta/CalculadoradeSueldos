@@ -1,11 +1,12 @@
 package com.hdxperalta.calculadoradesueldos;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -49,14 +50,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             EditText salaryEditText = (EditText)
                     findViewById(R.id.salary_edit_text);
             String salaryString = salaryEditText.getText().toString();
-            SALARY = Integer.parseInt(salaryString);
 
-            Intent goToDataViewer =
-                    new Intent(this,DataViewerActivity.class);
-            goToDataViewer.putExtra("FIXED_EXPENSES", FIXED_EXPENSES);
-            goToDataViewer.putExtra("VARIABLE_EXPENSES", VARIABLE_EXPENSES);
-            goToDataViewer.putExtra("SALARY", SALARY);
-            startActivity(goToDataViewer);
+            if(!salaryString.equals("")){
+                SALARY = Integer.parseInt(salaryString);
+                Intent goToDataViewer =
+                        new Intent(this,DataViewerActivity.class);
+                goToDataViewer.putExtra("FIXED_EXPENSES", FIXED_EXPENSES);
+                goToDataViewer.putExtra("VARIABLE_EXPENSES", VARIABLE_EXPENSES);
+                goToDataViewer.putExtra("SALARY", SALARY);
+                startActivity(goToDataViewer);
+            }
+            else {
+                showAlert("Debes introducir tu sueldo");
+            }
         });
         myAddFixedExpensesButton.setOnClickListener(view ->{
 
@@ -66,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             expensesValueEditText.setText("");
 
             if (!expensesValueString.equals("")){
-
                 fixedExpensesList.add(expensesValueString);
 
                 int expensesValueInt = Integer.parseInt(expensesValueString);
@@ -77,17 +82,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         "Has anadido un gasto fijo de: " + expensesValueInt,
                         Toast.LENGTH_LONG);
                 toast.show();
-
-                for(int i = 0; i < fixedExpensesList.size();i++ ){
-                    Log.v("MainActivity", "Fijos " + fixedExpensesList.get(i));
-                }
             }
         });
         myShowFixedExpensesButton.setOnClickListener(view ->{
-
-            Intent intent = new Intent(this, FixedExpensesListActivity.class);
-            intent.putStringArrayListExtra("LIST_ITEMS", fixedExpensesList);
-            startActivityForResult(intent, REQUEST_CODE);
+            if(fixedExpensesList != null && !fixedExpensesList.isEmpty()){
+                Intent intent = new Intent(this, FixedExpensesListActivity.class);
+                intent.putStringArrayListExtra("LIST_ITEMS", fixedExpensesList);
+                intent.putExtra("TITLE", "Gastos Fijos");
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+            else {
+                showAlert("Debes introducir tus GASTOS FIJOS");
+            }
         });
         myAddVariableExpensesButton.setOnClickListener(view ->{
 
@@ -108,30 +114,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         "Has anadido un gasto variable de: " + expensesValueInt,
                         Toast.LENGTH_SHORT);
                 toast.show();
-
-                for(int i = 0; i < variableExpensesLIst.size();i++ ){
-                    Log.v("MainActivity", "Variable " + variableExpensesLIst.get(i));
-                }
             }
         });
         myShowVariableExpensesButton.setOnClickListener(view ->{
 
-            Intent intent = new Intent(this, FixedExpensesListActivity.class);
-            intent.putStringArrayListExtra("LIST_ITEMS", variableExpensesLIst);
-            startActivityForResult(intent, REQUEST_CODE2);
-
+            if (variableExpensesLIst != null && !variableExpensesLIst.isEmpty()){
+                Intent intent = new Intent(this, FixedExpensesListActivity.class);
+                intent.putStringArrayListExtra("LIST_ITEMS", variableExpensesLIst);
+                intent.putExtra("TITLE", "Gastos Variables");
+                startActivityForResult(intent, REQUEST_CODE2);
+            }
+            else {
+                showAlert("Debes introducir tus GASTOS VARIABLES");
+            }
         });
         myClearButton.setOnClickListener(view ->{
             SALARY = 0;
             FIXED_EXPENSES = 0;
-            fixedExpensesList = null;
+            VARIABLE_EXPENSES = 0;
+            variableExpensesLIst.clear();
+            fixedExpensesList.clear();
         });
 
     }
 
+    private void showAlert(String message) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setTitle("Faltan Datos")
+                .setMessage(message)
+                .setPositiveButton("ACEPTAR", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                })
+                .create();
+        alertDialog.show();
+    }
     @Override
     public void onClick(View view) {}
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -167,5 +187,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
 }
 

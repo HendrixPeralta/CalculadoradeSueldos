@@ -1,20 +1,19 @@
 package com.hdxperalta.calculadoradesueldos;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class FixedExpensesListActivity extends AppCompatActivity {
-
 
 
     @Override
@@ -26,33 +25,36 @@ public class FixedExpensesListActivity extends AppCompatActivity {
 
         ArrayList<String> listItems;
         listItems = getIntent().getStringArrayListExtra("LIST_ITEMS");
+        String titleBar = getIntent().getStringExtra("TITLE");
+        getSupportActionBar().setTitle(titleBar);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
                 R.layout.my_text_view,
                 listItems);
         listView.setAdapter(arrayAdapter);
 
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listView.setOnItemClickListener((AdapterView<?> parent, View view, int position, long id) -> {
+            // TODO Auto-generated method stub
 
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view,
-                                           int position, long id) {
-                // TODO Auto-generated method stub
+            AlertDialog alertDialog = new AlertDialog.Builder(FixedExpensesListActivity.this)
+                    .setTitle("ATENCION")
+                    .setMessage("¿Desea eliminar este gasto?")
+                    .setPositiveButton("ACEPTAR", (dialogInterface, i) -> {
+                        listItems.remove(position);
+                        arrayAdapter.notifyDataSetChanged();
+                        Intent intent = new Intent();
+                        intent.putStringArrayListExtra("listItem", listItems);
+                        setResult(RESULT_OK, intent);
 
-                listItems.remove(position);
-
-                arrayAdapter.notifyDataSetChanged();
-                Intent intent = new Intent();
-                intent.putStringArrayListExtra("listItem", listItems);
-                setResult(RESULT_OK, intent);
-
-                Toast.makeText(FixedExpensesListActivity.this, "Item Deleted", Toast.LENGTH_LONG).show();
-
-                return true;
-
-            }
-
+                        Toast.makeText(FixedExpensesListActivity.this, "Item Deleted", Toast.LENGTH_LONG).show();
+                    })
+                    .setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                        }
+                    })
+                    .create();
+            alertDialog.show();
         });
     }
-
 }

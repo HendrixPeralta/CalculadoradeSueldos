@@ -58,12 +58,14 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="16dp" />
 
 
     <Button
         android:id="@+id/calculate_button"
-        android:layout_width="224dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -80,11 +82,11 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:onClick="addExpenses"
         android:text="@string/add_Expenses"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FixedExpensesEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/FixedExpensesEditText"
+        android:layout_marginLeft="16dp" />
 
     <Button
         android:id="@+id/fixedExpensesButton"
@@ -92,11 +94,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
-        android:text="Ver gastos fijos"
+        android:text="@string/ver_gastos_fijos"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addFixedExpensesButton"
-        app:layout_constraintTop_toTopOf="@+id/addFixedExpensesButton" />
+        app:layout_constraintTop_toTopOf="@+id/addFixedExpensesButton"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp" />
 
     <TextView
         style="@style/SectionTitle"
@@ -104,7 +108,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Gastos Variables"
+        android:text="@string/gastos_variables"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fixedExpensesButton" />
@@ -117,7 +121,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Introduce Un monto"
+        android:hint="@string/introduce_un_monto"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +136,8 @@
         android:text="@string/add_Expenses"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/variableExpensesEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/variableExpensesEditText"
+        android:layout_marginLeft="16dp" />
 
     <Button
         android:id="@+id/variableExpensesButton"
@@ -140,11 +145,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
-        android:text="ver gastos variables"
+        android:text="@string/ver_gastos_variables"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addVariableExpensesButton"
-        app:layout_constraintTop_toTopOf="@+id/addVariableExpensesButton" />
+        app:layout_constraintTop_toTopOf="@+id/addVariableExpensesButton"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp" />
 
     <Button
         android:id="@+id/clearButton"
@@ -152,9 +159,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Limpiar"
+        android:text="@string/limpiar"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/salary_edit_text" />
+        app:layout_constraintTop_toBottomOf="@+id/salary_edit_text"
+        android:layout_marginLeft="16dp" />
 
 </android.support.constraint.ConstraintLayout>
